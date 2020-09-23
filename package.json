@@ -1,0 +1,37 @@
+{
+    "name": "rle",
+    "displayName": "RLE",
+    "description": "Syntax highlighting for cellular automaton RLE file format",
+    "version": "0.0.1",
+    "license": "MIT",
+    "engines": {
+        "vscode": "^1.0.0"
+    },
+    "categories": [
+        "Other",
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [
+            {
+                "id": "rle",
+                "aliases": [
+                    "RLE",
+                    "rle",
+                    "Run Length Encoded"
+                ],
+                "extensions": [
+                    ".rle"
+                ],
+                "configuration": "./language-configuration.json"
+            }
+        ],
+        "grammars": [
+            {
+                "language": "rle",
+                "scopeName": "source.rle",
+                "path": "./syntaxes/rle.tmLanguage.json"
+            }
+        ]
+    }
+}
