@@ -1,164 +1,164 @@
 {
-	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
-	"name": "RLE",
-	"patterns": [
-		{
-			"include": "#comment"
-		},
-		{
-			"include": "#information"
-		},
-		{
-			"include": "#cxrle"
-		},
-		{
-			"include": "#header"
-		},
-		{
-			"include": "#pattern"
-		},
-		{
-			"include": "#invalid"
-		}
-	],
-	"repository": {
-		"comment": {
-			"begin": "^(?i:#C(?!XRLE))|(#(?![CcNOPRr]))",
-			"beginCaptures": {
-				"0": {
-					"name": "punctuation.definition.comment.rle"
-				}
-			},
-			"end": "\\n",
-			"name": "comment.line.number-sign.rle"
-		},
-		"information": {
-			"begin": "^#[NOPRr] *",
-			"beginCaptures": {
-				"0": {
-					"name": "comment.line.number-sign.rle"
-				}
-			},
-			"end": "\\n",
-			"contentName": "string.unquoted.rle"
-		},
-		"cxrle": {
-			"begin": "^(?i:#CXRLE) *",
-			"beginCaptures": {
-				"0": {
-					"name": "comment.line.number-sign.rle"
-				}
-			},
-			"end": "\\n",
-			"patterns": [
-				{
-					"match": "(Pos) *(=) *(-?\\d+) *(,) *(-?\\d+)",
-					"captures": {
-						"1": {
-							"name": "keyword.other.rle"
-						},
-						"2": {
-							"name": "punctuation.separator.key-value.rle"
-						},
-						"3": {
-							"name": "constant.numeric.integer.rle"
-						},
-						"4": {
-							"name": "punctuation.separator.sequence.rle"
-						},
-						"5": {
-							"name": "constant.numeric.integer.rle"
-						}
-					}
-				},
-				{
-					"match": "(Gen) *(=) *(\\d+)",
-					"captures": {
-						"1": {
-							"name": "keyword.other.rle"
-						},
-						"2": {
-							"name": "punctuation.separator.key-value.rle"
-						},
-						"3": {
-							"name": "constant.numeric.integer.rle"
-						}
-					}
-				}
-			]
-		},
-		"header": {
-			"match": "^(x) *(=) *(\\d+) *(,) *(y) *(=) *(\\d+)(?: *(,) *(rule) *(=) *(.*\\S))? *$",
-			"captures": {
-				"1": {
-					"name": "keyword.other.rle"
-				},
-				"2": {
-					"name": "punctuation.separator.key-value.rle"
-				},
-				"3": {
-					"name": "constant.numeric.integer.rle"
-				},
-				"4": {
-					"name": "punctuation.separator.sequence.rle"
-				},
-				"5": {
-					"name": "keyword.other.rle"
-				},
-				"6": {
-					"name": "punctuation.separator.key-value.rle"
-				},
-				"7": {
-					"name": "constant.numeric.integer.rle"
-				},
-				"8": {
-					"name": "punctuation.separator.sequence.rle"
-				},
-				"9": {
-					"name": "keyword.other.rle"
-				},
-				"10": {
-					"name": "punctuation.separator.key-value.rle"
-				},
-				"11": {
-					"name": "string.unquoted.rule.rle"
-				}
-			}
-		},
-		"pattern": {
-			"match": "^(\\d*[a-zA-Z.$]\\s*)+!?",
-			"captures": {
-				"0": {
-					"patterns": [
-						{
-							"match": "\\d+",
-							"name": "constant.numeric.integer.run-count.rle"
-						},
-						{
-							"match": "[ac-zA-Z]",
-							"name": "constant.language.alive-cell.rle"
-						},
-						{
-							"match": "[b.]",
-							"name": "constant.language.dead-cell.rle"
-						},
-						{
-							"match": "\\$",
-							"name": "keyword.operator.end-of-line.rle"
-						},
-						{
-							"match": "!",
-							"name": "keyword.operator.end-of-pattern.rle"
-						}
-					]
-				}
-			},
-			"name": "meta.pattern.rle"
-		},
-		"invalid": {
-			"match": "\\S",
-			"name": "invalid.illegal.rle"
-		}
-	},
-	"scopeName": "source.rle"
+    "$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+    "name": "RLE",
+    "patterns": [
+        {
+            "include": "#comment"
+        },
+        {
+            "include": "#information"
+        },
+        {
+            "include": "#cxrle"
+        },
+        {
+            "include": "#header"
+        },
+        {
+            "include": "#pattern"
+        },
+        {
+            "include": "#invalid"
+        }
+    ],
+    "repository": {
+        "comment": {
+            "begin": "^(?i:#C(?!XRLE))|(#(?![CcNOPRr]))",
+            "beginCaptures": {
+                "0": {
+                    "name": "punctuation.definition.comment.rle"
+                }
+            },
+            "end": "\\n",
+            "name": "comment.line.number-sign.rle"
+        },
+        "information": {
+            "begin": "^#[NOPRr] *",
+            "beginCaptures": {
+                "0": {
+                    "name": "comment.line.number-sign.rle"
+                }
+            },
+            "end": "\\n",
+            "contentName": "string.unquoted.rle"
+        },
+        "cxrle": {
+            "begin": "^(?i:#CXRLE) *",
+            "beginCaptures": {
+                "0": {
+                    "name": "comment.line.number-sign.rle"
+                }
+            },
+            "end": "\\n",
+            "patterns": [
+                {
+                    "match": "(Pos) *(=) *(-?\\d+) *(,) *(-?\\d+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.rle"
+                        },
+                        "2": {
+                            "name": "punctuation.separator.key-value.rle"
+                        },
+                        "3": {
+                            "name": "constant.numeric.integer.rle"
+                        },
+                        "4": {
+                            "name": "punctuation.separator.sequence.rle"
+                        },
+                        "5": {
+                            "name": "constant.numeric.integer.rle"
+                        }
+                    }
+                },
+                {
+                    "match": "(Gen) *(=) *(\\d+)",
+                    "captures": {
+                        "1": {
+                            "name": "keyword.other.rle"
+                        },
+                        "2": {
+                            "name": "punctuation.separator.key-value.rle"
+                        },
+                        "3": {
+                            "name": "constant.numeric.integer.rle"
+                        }
+                    }
+                }
+            ]
+        },
+        "header": {
+            "match": "^(x) *(=) *(\\d+) *(,) *(y) *(=) *(\\d+)(?: *(,) *(rule) *(=) *(.*\\S))? *$",
+            "captures": {
+                "1": {
+                    "name": "keyword.other.rle"
+                },
+                "2": {
+                    "name": "punctuation.separator.key-value.rle"
+                },
+                "3": {
+                    "name": "constant.numeric.integer.rle"
+                },
+                "4": {
+                    "name": "punctuation.separator.sequence.rle"
+                },
+                "5": {
+                    "name": "keyword.other.rle"
+                },
+                "6": {
+                    "name": "punctuation.separator.key-value.rle"
+                },
+                "7": {
+                    "name": "constant.numeric.integer.rle"
+                },
+                "8": {
+                    "name": "punctuation.separator.sequence.rle"
+                },
+                "9": {
+                    "name": "keyword.other.rle"
+                },
+                "10": {
+                    "name": "punctuation.separator.key-value.rle"
+                },
+                "11": {
+                    "name": "string.unquoted.rule.rle"
+                }
+            }
+        },
+        "pattern": {
+            "match": "^(\\d*[a-zA-Z.$]\\s*)+!?",
+            "captures": {
+                "0": {
+                    "patterns": [
+                        {
+                            "match": "\\d+",
+                            "name": "constant.numeric.integer.run-count.rle"
+                        },
+                        {
+                            "match": "[ac-zA-Z]",
+                            "name": "constant.language.alive-cell.rle"
+                        },
+                        {
+                            "match": "[b.]",
+                            "name": "constant.language.dead-cell.rle"
+                        },
+                        {
+                            "match": "\\$",
+                            "name": "keyword.operator.end-of-line.rle"
+                        },
+                        {
+                            "match": "!",
+                            "name": "keyword.operator.end-of-pattern.rle"
+                        }
+                    ]
+                }
+            },
+            "name": "meta.pattern.rle"
+        },
+        "invalid": {
+            "match": "\\S",
+            "name": "invalid.illegal.rle"
+        }
+    },
+    "scopeName": "source.rle"
 }

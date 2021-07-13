@@ -1,0 +1,11 @@
+{
+    "Header": {
+        "prefix": [
+            "x="
+        ],
+        "body": [
+            "x = $1, y = $2, rule = ${3:B3/S23}"
+        ],
+        "description": "Header line"
+    }
+}

@@ -32,6 +32,12 @@
                 "scopeName": "source.rle",
                 "path": "./syntaxes/rle.tmLanguage.json"
             }
+        ],
+        "snippets": [
+            {
+                "language": "rle",
+                "path": "./snippets.json"
+            }
         ]
     }
 }
